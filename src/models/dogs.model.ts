@@ -21,7 +21,7 @@ const getAll = async (): Promise<RouteResponse> => {
         }
     }
 }
-const store = async ({ name, age }: Object) => {
+const store = async ({ name, age }: Object): Promise<RouteResponse> => {
     try {
         const data = await DogsModel.create({ name, age })
 
@@ -39,7 +39,28 @@ const store = async ({ name, age }: Object) => {
         }
     }
 }
+
+const find = async (id: number): Promise<RouteResponse> => {
+    try {
+        const data = await DogsModel.findById(id)
+
+        const response: RouteResponse = {
+            statuscode: 200,
+            message: 'Records found in the collection',
+            data,
+        }
+
+        return response
+    } catch (err) {
+        return {
+            statuscode: 500,
+            message: 'Internal server error',
+        }
+    }
+}
+
 export const Dogs: Model = {
     get: getAll,
     store,
+    find,
 }
