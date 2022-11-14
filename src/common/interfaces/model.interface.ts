@@ -1,3 +1,3 @@
 export interface Model {
-    get: () => void | any[]
+    get: any
 }

@@ -1,5 +1,5 @@
 export const mongoDBURI: string =
-    'mongodb+srv://ripterdust:<password>@idukay.pninwim.mongodb.net/?retryWrites=true&w=majority'
+    'mongodb+srv://ripterdust:marlyn2010@idukay.pninwim.mongodb.net/idukay?retryWrites=true&w=majority'
 
 export const mongoDbConfig = {
     useNewUrlParser: true,

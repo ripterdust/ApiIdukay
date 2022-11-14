@@ -3,7 +3,7 @@ import { RouteResponse } from './common/interfaces/response.interface'
 import { Route } from './common/interfaces/route.interface'
 import { routes } from './common/routes'
 import mongoose from 'mongoose'
-import { mongoDbConfig, mongoDBURI } from './common/lib/database'
+import { mongoDbConfig, mongoDBURI } from './common/database/database'
 
 export const app = express()
 
