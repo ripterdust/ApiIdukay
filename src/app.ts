@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 import { mongoDbConfig, mongoDBURI } from './common/database/database'
 import morgan from 'morgan'
 
+// Initilizations
 export const app = express()
 
 // Configuration
