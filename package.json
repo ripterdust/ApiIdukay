@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ripterdust/ApiIdukay/issues"
   },
-  "homepage": "https://github.com/ripterdust/ApiIdukay#readme"
+  "homepage": "https://github.com/ripterdust/ApiIdukay#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
