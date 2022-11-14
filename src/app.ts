@@ -4,6 +4,7 @@ import { Route } from './common/interfaces/route.interface'
 import { routes } from './common/routes'
 import mongoose from 'mongoose'
 import { mongoDbConfig, mongoDBURI } from './common/database/database'
+import morgan from 'morgan'
 
 export const app = express()
 
@@ -17,6 +18,8 @@ mongoose
 // Middlewares
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(morgan('tiny'))
+
 // Routes
 routes.map((route: Route) => app.use(route.endpoint, route.router))
 
