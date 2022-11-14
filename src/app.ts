@@ -5,12 +5,14 @@ import { routes } from './common/routes'
 import mongoose from 'mongoose'
 import { mongoDbConfig, mongoDBURI } from './common/database/database'
 import morgan from 'morgan'
+import { environment } from './common/config'
 
 // Initilizations
 export const app = express()
 
 // Configuration
-app.set('port', process.env.PORT || 3000)
+app.set('port', environment.PORT)
+
 mongoose
     .connect(mongoDBURI, mongoDbConfig)
     .then((res) => console.log('Database connected'))
