@@ -18,7 +18,6 @@ export const storeCats = async (req: Request, res: Response) => {
 
 export const findCats = async (req: Request, res: Response) => {
     const { id } = req.params
-    console.log(id)
     const response: RouteResponse = await Cats.find(id)
     res.status(response.statuscode).json(response)
 }

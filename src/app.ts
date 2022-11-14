@@ -10,7 +10,6 @@ export const app = express()
 // Configuration
 app.set('port', process.env.PORT || 3000)
 mongoose
-
     .connect(mongoDBURI, mongoDbConfig)
     .then((res) => console.log('Database connected'))
     .catch((err) => console.log(err.message))
