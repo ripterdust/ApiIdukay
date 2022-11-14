@@ -40,7 +40,7 @@ const store = async ({ name, age }: Object): Promise<RouteResponse> => {
     }
 }
 
-const find = async (id: number): Promise<RouteResponse> => {
+const find = async (id: string): Promise<RouteResponse> => {
     try {
         const data = await DogsModel.findById(id)
 

@@ -41,7 +41,26 @@ const store = async ({ name, age }: Object): Promise<RouteResponse> => {
     }
 }
 
+const find = async (id: string): Promise<RouteResponse> => {
+    try {
+        const data = await CatsModel.findById(id)
+        const response: RouteResponse = {
+            statuscode: 200,
+            message: 'Records found in the collection',
+            data,
+        }
+
+        return response
+    } catch (err) {
+        return {
+            statuscode: 500,
+            message: 'Internal server error',
+        }
+    }
+}
+
 export const Cats: Model = {
     get: getAll,
-    store: store,
+    store,
+    find,
 }
