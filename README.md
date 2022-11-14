@@ -2,6 +2,10 @@
 
 ## Rutas disponibles
 
+La api será accesible a travez de la ruta:
+
+    localhost:3000
+
 El api tiene disponibles los siguientes endpoints
 
 | Endpoint |
@@ -38,7 +42,3 @@ Para poder corre el proyecto se debe de correr el siguiente comando:
 ```
     $ npm run dev
 ```
-
-La api será accesible a travez de la ruta:
-
-    localhost:3000
