@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { RouteResponse } from '../common/interfaces/response.interface'
+import { Dogs } from '../models/dogs.model'
 
 export const indexDogs = (req: Request, res: Response) => {
     const response: RouteResponse = {
@@ -7,5 +8,6 @@ export const indexDogs = (req: Request, res: Response) => {
         message: 'Dogs collection',
     }
 
+    Dogs.get()
     res.status(response.statuscode).json(response)
 }

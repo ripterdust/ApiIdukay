@@ -2,11 +2,18 @@ import express, { Request, Response } from 'express'
 import { RouteResponse } from './common/interfaces/response.interface'
 import { Route } from './common/interfaces/route.interface'
 import { routes } from './common/routes'
+import mongoose from 'mongoose'
+import { mongoDbConfig, mongoDBURI } from './common/lib/database'
 
 export const app = express()
 
 // Configuration
 app.set('port', process.env.PORT || 3000)
+mongoose
+
+    .connect(mongoDBURI, mongoDbConfig)
+    .then((res) => console.log('Database connected'))
+    .catch((err) => console.log(err.message))
 
 // Routes
 routes.map((route: Route) => app.use(route.endpoint, route.router))
