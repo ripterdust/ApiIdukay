@@ -22,11 +22,14 @@ const getAll = async (): Promise<RouteResponse> => {
     }
 }
 
-const store = async (object: Object): Promise<RouteResponse> => {
+const store = async ({ name, age }: Object): Promise<RouteResponse> => {
     try {
+        const data = await CatsModel.create({ name, age })
+
         const response: RouteResponse = {
             statuscode: 200,
             message: 'Elemet stored successfully',
+            data,
         }
 
         return response

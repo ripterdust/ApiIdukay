@@ -11,12 +11,7 @@ export const indexCats = async (req: Request, res: Response) => {
 export const storeCats = async (req: Request, res: Response) => {
     const { name, age } = req.body
 
-    const data = await Cats.store({ name, age })
-
-    const response: RouteResponse = {
-        statuscode: 200,
-        message: data,
-    }
+    const response = await Cats.store({ name, age })
 
     res.status(response.statuscode).json(response)
 }
