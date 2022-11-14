@@ -3,12 +3,9 @@ import { RouteResponse } from '../common/interfaces/response.interface'
 import { Dogs } from '../models/dogs.model'
 
 export const indexDogs = async (req: Request, res: Response) => {
-    const data = await Dogs.get()
-    const response: RouteResponse = {
-        statuscode: 200,
-        message: 'Dogs collection',
-        data,
-    }
+    const response = await Dogs.get()
 
     res.status(response.statuscode).json(response)
 }
+
+export const storeDogs = async (req: Request, res: Response) => {}
