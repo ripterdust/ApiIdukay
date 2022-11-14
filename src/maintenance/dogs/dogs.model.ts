@@ -21,6 +21,7 @@ const getAll = async (): Promise<RouteResponse> => {
         }
     }
 }
+
 const store = async ({ name, age }: Object): Promise<RouteResponse> => {
     try {
         const data = await DogsModel.create({ name, age })
@@ -77,9 +78,26 @@ const deleteElement = async (_id: string): Promise<RouteResponse> => {
     }
 }
 
+const update = async (_id: string, params: Object): Promise<RouteResponse> => {
+    try {
+        const data = await DogsModel.updateOne({ _id }, params)
+        return {
+            statuscode: 200,
+            message: 'Item updated',
+            data,
+        }
+    } catch (err) {
+        return {
+            statuscode: 500,
+            message: 'Internal server error',
+        }
+    }
+}
+
 export const Dogs: Model = {
     get: getAll,
     store,
     find,
     delete: deleteElement,
+    update,
 }

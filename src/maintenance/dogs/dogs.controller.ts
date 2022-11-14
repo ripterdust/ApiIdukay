@@ -30,3 +30,10 @@ export const deleteDogs = async (req: Request, res: Response) => {
 
     res.status(response.statuscode).json(response)
 }
+
+export const updateDog = async (req: Request, res: Response) => {
+    const { id } = req.params
+    const response: RouteResponse = await Dogs.update(id, req.body)
+
+    res.status(response.statuscode).json(response)
+}
