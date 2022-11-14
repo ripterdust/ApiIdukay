@@ -21,3 +21,10 @@ export const findCats = async (req: Request, res: Response) => {
     const response: RouteResponse = await Cats.find(id)
     res.status(response.statuscode).json(response)
 }
+
+export const deleteCats = async (req: Request, res: Response) => {
+    const { id } = req.params
+    const response: RouteResponse = await Cats.delete(id)
+
+    res.status(response.statuscode).json(response)
+}

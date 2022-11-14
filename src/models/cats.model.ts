@@ -59,8 +59,27 @@ const find = async (id: string): Promise<RouteResponse> => {
     }
 }
 
+const deleteElement = async (_id: string): Promise<RouteResponse> => {
+    try {
+        const data = await CatsModel.deleteOne({ _id })
+        const response: RouteResponse = {
+            statuscode: 200,
+            message: 'Element deleted',
+            data,
+        }
+
+        return response
+    } catch (err) {
+        return {
+            statuscode: 500,
+            message: 'Internal server error',
+        }
+    }
+}
+
 export const Cats: Model = {
     get: getAll,
     store,
     find,
+    delete: deleteElement,
 }
