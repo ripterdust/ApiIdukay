@@ -18,7 +18,7 @@ mongoose
 // Middlewares
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-app.use(morgan('tiny'))
+app.use(morgan('dev'))
 
 // Routes
 routes.map((route: Route) => app.use(route.endpoint, route.router))
