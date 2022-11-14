@@ -5,7 +5,7 @@ import { routes } from './common/routes'
 import mongoose from 'mongoose'
 import { mongoDbConfig, mongoDBURI } from './common/database/database'
 import morgan from 'morgan'
-import { environment } from './common/config'
+import { environment } from './common/config/environment.config'
 
 // Initilizations
 export const app = express()
