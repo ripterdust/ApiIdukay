@@ -6,8 +6,8 @@ export const indexDogs = (req: Request, res: Response) => {
     const response: RouteResponse = {
         statuscode: 200,
         message: 'Dogs collection',
+        data: Dogs.get(),
     }
 
-    Dogs.get()
     res.status(response.statuscode).json(response)
 }

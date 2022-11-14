@@ -1,7 +1,9 @@
+import { Model } from '../common/interfaces/model.interface'
+
 const getAll = () => {
-    console.log('hola')
+    return []
 }
 
-export const Dogs = {
+export const Dogs: Model = {
     get: getAll,
 }
