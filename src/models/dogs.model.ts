@@ -3,11 +3,10 @@ import { Model } from '../common/interfaces/model.interface'
 
 const getAll = async () => {
     try {
-        const result = await DogsModel.find()
-        return result
+        const data = await DogsModel.find()
+        return data
     } catch (error) {
-        console.log('error')
-        return await 'Error'
+        return await []
     }
 }
 
