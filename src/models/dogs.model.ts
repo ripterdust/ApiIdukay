@@ -46,8 +46,8 @@ const find = async (id: string): Promise<RouteResponse> => {
 
         const response: RouteResponse = {
             statuscode: 200,
-            message: 'Records found in the collection',
-            data,
+            message: 'Record found in the collection',
+            data: data ? data : [],
         }
 
         return response
