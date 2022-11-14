@@ -15,6 +15,9 @@ mongoose
     .then((res) => console.log('Database connected'))
     .catch((err) => console.log(err.message))
 
+// Middlewares
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 // Routes
 routes.map((route: Route) => app.use(route.endpoint, route.router))
 
