@@ -11,6 +11,7 @@ router.post('/', storeDogs)
 router.delete('/:id', deleteDogs)
 
 router.put('/:id', updateDog)
+
 export const dogsRoutes: Route = {
     endpoint: '/dogs',
     router,
