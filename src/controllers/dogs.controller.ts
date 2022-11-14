@@ -23,3 +23,10 @@ export const findDogs = async (req: Request, res: Response) => {
 
     res.status(response.statuscode).json(response)
 }
+
+export const deleteDogs = async (req: Request, res: Response) => {
+    const { id } = req.params
+    const response: RouteResponse = await Dogs.delete(id)
+
+    res.status(response.statuscode).json(response)
+}
