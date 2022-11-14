@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { Route } from '../common/interfaces/route.interface'
-import { deleteDogs, findDogs, indexDogs, storeDogs } from '../controllers/dogs.controller'
+import { Route } from '../../common/interfaces/route.interface'
+import { deleteDogs, findDogs, indexDogs, storeDogs } from './dogs.controller'
 
 const router = Router()
 

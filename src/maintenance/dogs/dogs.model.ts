@@ -1,7 +1,7 @@
-import { DogsModel } from '../common/database/models/dogsModel'
-import { Model } from '../common/interfaces/model.interface'
-import { Object } from '../common/interfaces/object.interface'
-import { RouteResponse } from '../common/interfaces/response.interface'
+import { DogsModel } from '../../common/database/models/dogsModel'
+import { Model } from '../../common/interfaces/model.interface'
+import { Object } from '../../common/interfaces/object.interface'
+import { RouteResponse } from '../../common/interfaces/response.interface'
 
 const getAll = async (): Promise<RouteResponse> => {
     try {

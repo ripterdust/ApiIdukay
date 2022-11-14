@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import { RouteResponse } from '../common/interfaces/response.interface'
-import { Dogs } from '../models/dogs.model'
+import { RouteResponse } from '../../common/interfaces/response.interface'
+import { Dogs } from './dogs.model'
 
 export const indexDogs = async (req: Request, res: Response) => {
     const response: RouteResponse = await Dogs.get()
