@@ -9,6 +9,7 @@ router.get('/', indexDogs).get('/:id', findDogs)
 router.post('/', storeDogs)
 
 router.delete('/:id', deleteDogs)
+
 export const dogsRoutes: Route = {
     endpoint: '/dogs',
     router,
