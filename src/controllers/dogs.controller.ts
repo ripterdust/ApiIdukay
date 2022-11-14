@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { RouteResponse } from '../common/interfaces/response.interface'
 
-export const index = (req: Request, res: Response) => {
+export const indexDogs = (req: Request, res: Response) => {
     const response: RouteResponse = {
         statuscode: 200,
         message: 'Dogs collection',

@@ -1,10 +1,10 @@
 import { Router } from 'express'
 import { Route } from '../common/interfaces/route.interface'
-import { index } from '../controllers/dogs.controller'
+import { indexDogs } from '../controllers/dogs.controller'
 
 const router = Router()
 
-router.get('/', index)
+router.get('/', indexDogs)
 
 export const dogsRoutes: Route = {
     endpoint: '/dogs',
