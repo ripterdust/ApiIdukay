@@ -3,5 +3,5 @@ export interface Model {
     store: any
     find: any
     delete: any
-    update?: any
+    update: any
 }

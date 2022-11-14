@@ -28,3 +28,10 @@ export const deleteCats = async (req: Request, res: Response) => {
 
     res.status(response.statuscode).json(response)
 }
+
+export const updateCats = async (req: Request, res: Response) => {
+    const { id } = req.params
+    const response: RouteResponse = await Cats.update(id, req.body)
+
+    res.status(response.statuscode).json(response)
+}
