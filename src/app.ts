@@ -15,7 +15,7 @@ app.set('port', environment.PORT)
 
 mongoose
     .connect(mongoDBURI, mongoDbConfig)
-    .then((res) => console.log('Database connected'))
+    .then(() => console.log('Database connected'))
     .catch((err) => console.log(err.message))
 
 // Middlewares
