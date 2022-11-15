@@ -93,10 +93,29 @@ const update = async (_id: string, params: Object): Promise<RouteResponse> => {
     }
 }
 
+const search = async (name: string | RegExp, age: number | RegExp): Promise<RouteResponse> => {
+    try {
+        const data = await CatsModel.find({ $or: [{ name }, { age }] })
+        const response: RouteResponse = {
+            statuscode: 200,
+            message: 'Records found in the collection',
+            data,
+        }
+
+        return response
+    } catch (err) {
+        return {
+            statuscode: 500,
+            message: 'Internal server error',
+        }
+    }
+}
+
 export const Cats: Model = {
     get: getAll,
     store,
     find,
     delete: deleteElement,
     update,
+    search,
 }

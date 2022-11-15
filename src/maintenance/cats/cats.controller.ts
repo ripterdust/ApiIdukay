@@ -35,3 +35,15 @@ export const updateCats = async (req: Request, res: Response) => {
 
     res.status(response.statuscode).json(response)
 }
+
+export const searchCat = async (req: Request, res: Response) => {
+    let { name, age } = req.query
+    let nameQuery: string | RegExp = ''
+
+    if (name) {
+        nameQuery = new RegExp(`${name}`, 'gi')
+    }
+
+    const response: RouteResponse = await Cats.search(nameQuery, age)
+    res.status(response.statuscode).json(response)
+}
