@@ -12,6 +12,6 @@ export const transformQueryFields = (fields: string): Object => {
 
         return null
     })
-    console.log(fieldsObject)
-    return {}
+
+    return fieldsObject
 }

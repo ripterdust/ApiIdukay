@@ -1,11 +1,13 @@
 import { CatsModel } from '../../common/database/models/catsModel'
+import { GeneralObject } from '../../common/interfaces/generalObject.interface'
 import { Model } from '../../common/interfaces/model.interface'
 import { Object } from '../../common/interfaces/object.interface'
 import { RouteResponse } from '../../common/interfaces/response.interface'
 
-const getAll = async (): Promise<RouteResponse> => {
+const getAll = async (fields: GeneralObject): Promise<RouteResponse> => {
     try {
-        const data = await CatsModel.find()
+        console.log(fields)
+        const data = await CatsModel.find({}, fields)
 
         const response: RouteResponse = {
             statuscode: 200,

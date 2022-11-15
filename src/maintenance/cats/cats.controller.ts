@@ -8,7 +8,7 @@ export const indexCats = async (req: Request, res: Response) => {
 
     const fielsObject = transformQueryFields(`${fields}`)
 
-    const response = await Cats.get()
+    const response = await Cats.get(fielsObject)
 
     res.status(response.statuscode).json(response)
 }
