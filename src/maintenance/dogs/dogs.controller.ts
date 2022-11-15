@@ -46,7 +46,6 @@ export const searchDog = async (req: Request, res: Response) => {
         nameQuery = new RegExp(`${name}`, 'gi')
     }
 
-    console.log(nameQuery)
     const response: RouteResponse = await Dogs.search(nameQuery, age)
     res.status(response.statuscode).json(response)
 }
