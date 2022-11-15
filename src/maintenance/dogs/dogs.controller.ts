@@ -1,9 +1,14 @@
 import { Request, Response } from 'express'
 import { RouteResponse } from '../../common/interfaces/response.interface'
+import { transformQueryFields } from '../../common/ultis/transform.util'
 import { Dogs } from './dogs.model'
 
 export const indexDogs = async (req: Request, res: Response) => {
-    const response: RouteResponse = await Dogs.get()
+    const { fields } = req.query
+
+    const fielsObject = transformQueryFields(`${fields}`)
+
+    const response: RouteResponse = await Dogs.get(fielsObject)
 
     res.status(response.statuscode).json(response)
 }

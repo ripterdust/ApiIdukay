@@ -3,9 +3,9 @@ import { Model } from '../../common/interfaces/model.interface'
 import { Object } from '../../common/interfaces/object.interface'
 import { RouteResponse } from '../../common/interfaces/response.interface'
 
-const getAll = async (): Promise<RouteResponse> => {
+const getAll = async (fields: Object): Promise<RouteResponse> => {
     try {
-        const data = await DogsModel.find()
+        const data = await DogsModel.find({}, fields)
 
         const response: RouteResponse = {
             statuscode: 200,

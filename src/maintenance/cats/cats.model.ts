@@ -6,7 +6,6 @@ import { RouteResponse } from '../../common/interfaces/response.interface'
 
 const getAll = async (fields: GeneralObject): Promise<RouteResponse> => {
     try {
-        console.log(fields)
         const data = await CatsModel.find({}, fields)
 
         const response: RouteResponse = {
