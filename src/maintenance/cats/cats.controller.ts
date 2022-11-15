@@ -1,8 +1,13 @@
 import { Request, Response } from 'express'
 import { RouteResponse } from '../../common/interfaces/response.interface'
+import { transformQueryFields } from '../../common/ultis/transform.util'
 import { Cats } from './cats.model'
 
 export const indexCats = async (req: Request, res: Response) => {
+    const { fields } = req.query
+
+    const fielsObject = transformQueryFields(`${fields}`)
+
     const response = await Cats.get()
 
     res.status(response.statuscode).json(response)
