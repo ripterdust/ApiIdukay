@@ -4,4 +4,5 @@ export interface Model {
     find: any
     delete: any
     update: any
+    search?: any
 }

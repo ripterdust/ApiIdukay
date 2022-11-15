@@ -37,3 +37,16 @@ export const updateDog = async (req: Request, res: Response) => {
 
     res.status(response.statuscode).json(response)
 }
+
+export const searchDog = async (req: Request, res: Response) => {
+    let { name, age } = req.query
+    let nameQuery: string | RegExp = ''
+
+    if (name) {
+        nameQuery = new RegExp(`${name}`, 'gi')
+    }
+
+    console.log(nameQuery)
+    const response: RouteResponse = await Dogs.search(nameQuery, age)
+    res.status(response.statuscode).json(response)
+}
